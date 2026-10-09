@@ -1,0 +1,26 @@
+# macOS folder metadata
+.DS_Store
+._*
+
+# JavaScript dependencies
+node_modules/
+
+# Generated build output and caches
+dist/
+build/
+.vite/
+coverage/
+
+# Local environment settings (keep example files shareable)
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Logs
+*.log
+
+# Editor temporary files
+*.swp
+*.swo
+*~
