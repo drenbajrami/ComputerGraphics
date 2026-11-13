@@ -27,6 +27,18 @@ const loader = new GLTFLoader();
 loader.load('public/model.glb', (gltf) => {
   gltf.scene.rotation.y = Math.PI;
   scene.add(gltf.scene);
+
+  let meshCount = 0;
+  gltf.scene.traverse((object) => {
+    if (!object.isMesh) return;
+
+    meshCount++;
+    const geometry = object.geometry;
+    const vertexCount = geometry.attributes.position.count;
+    const faceCount = (geometry.index ? geometry.index.count : vertexCount) / 3;
+    console.log(object.name || `Mesh ${meshCount}`, 'Vertices:', vertexCount, 'Faces:', faceCount);
+  });
+  console.log('Total meshes:', meshCount);
 });
 
 function animate() {

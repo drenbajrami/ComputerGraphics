@@ -31,7 +31,7 @@ const hit = o.clone().addScaledVector(dir, t);
 
 const ray = new THREE.Line(
     new THREE.BufferGeometry().setFromPoints([o, hit]),
-    new THREE.MeshBasicMaterial({ color: 0xff0000 })
+    new THREE.LineBasicMaterial({ color: 0xff0000 })
 
 )
 
@@ -48,7 +48,8 @@ scene.add(dot);
 
 const raycaster = new THREE.Raycaster(o, dir).intersectObject(floor)[0];
 
-console.log('Ray caster: ', raycaster.point)
+console.log('Formula:', hit);
+console.log('Raycaster:', raycaster.point);
 
 
 const control = new OrbitControls(camera, renderer.domElement);
